@@ -113,8 +113,8 @@ button.active {
   cursor: pointer;
 }
 .download {
-  width: 100%;
-  margin-top: 20pxgith;
+  /* width: 100%; */
+  margin-top: 20px;
 }
 .gradient-group {
   display: flex;
