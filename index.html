@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphics Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="settings">
+        <div class="title-1">Elica Key Visuals Generator</div>
+
+        <div class="group">
+          <div class="title-2">TYPE</div>
+          <div class="buttons">
+            <button>Aspiration</button>
+            <button class="active">Propagation</button>
+            <button>Hybrid</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <label class="title-2" for="size">SCALE</label>
+          <input class="slider" type="range" min="50" max="200" value="100" id="size" />
+        </div>
+
+        <div class="group">
+          <label class="title-2" for="speed">SPEED</label>
+          <input class="slider" type="range" min="50" max="200" value="100" id="size" />
+        </div>
+
+        <div class="group">
+          <div class="title-2">COLORS</div>
+          <div class="group-row-gradient">
+            <div class="btn-group-gradient">
+              <div class="title-3">Bright</div>
+              <div class="gradient-group">
+                <button class="gradient"></button>
+                <button class="gradient"></button>
+                <button class="gradient"></button>
+                <button class="gradient"></button>
+                <button class="gradient"></button>
+                <button class="gradient"></button>
+                <button class="gradient"></button>
+                <button class="gradient"></button>
+              </div>
+            </div>
+            <div class="group-row-gradient">
+              <div class="btn-group-gradient">
+                <div class="title-3">Soft</div>
+                <div class="gradient-group">
+                  <button class="gradient"></button>
+                  <button class="gradient"></button>
+                  <button class="gradient"></button>
+                  <button class="gradient"></button>
+                  <button class="gradient"></button>
+                  <button class="gradient"></button>
+                  <button class="gradient"></button>
+                  <button class="gradient"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="title-2">OUTPUT</div>
+          <div class="group-row">
+            <div class="btn-group">
+              <div class="title-3">Image</div>
+              <div class="buttons">
+                <button class="active">PNG</button>
+              </div>
+            </div>
+            <div class="btn-group">
+              <div class="title-3">Video</div>
+              <div class="buttons">
+                <button>MP4</button>
+                <button>MOV</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="title-2">FORMAT</div>
+          <div class="group-row">
+            <div class="btn-group">
+              <div class="title-3">Square</div>
+              <div class="buttons">
+                <button>1:1</button>
+              </div>
+            </div>
+            <div class="btn-group">
+              <div class="title-3">Horiziontal</div>
+              <div class="buttons">
+                <button class="active">16:9</button>
+                <button>4:3</button>
+              </div>
+            </div>
+            <div class="btn-group">
+              <div class="title-3">Vertical</div>
+              <div class="buttons">
+                <button>9:16</button>
+                <button>3:4</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="buttons">
+            <button class="download">DOWNLOAD</button>
+          </div>
+        </div>
+      </div>
+      <div class="artwork"></div>
+    </div>
+
+    <script></script>
+  </body>
+</html>
