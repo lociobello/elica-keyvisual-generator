@@ -1,8 +1,8 @@
 document.querySelectorAll(".group").forEach(function (group) {
-  group.querySelectorAll("button").forEach(function (button) {
+  group.querySelectorAll("button:not(.download)").forEach(function (button) {
     button.addEventListener("click", function () {
       // Remove 'active' class from all buttons within the same group
-      group.querySelectorAll("button").forEach(function (btn) {
+      group.querySelectorAll("button:not(.download)").forEach(function (btn) {
         btn.classList.remove("active");
       });
 
