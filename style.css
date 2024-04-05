@@ -119,7 +119,7 @@ button.active {
 .gradient-group {
   display: flex;
   flex-wrap: wrap;
-  width: fit-content;
+  /* width: fit-content; */
   gap: 8px;
 }
 .gradient {
