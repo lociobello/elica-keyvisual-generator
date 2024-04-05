@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elica Key Visuals Generator</title>
@@ -20,33 +23,75 @@
           </div>
         </div>
 
-        <div class="group">
-          <label class="title-2" for="size">SCALE</label>
-          <input class="slider" type="range" min="50" max="200" value="100" id="size" />
+        <div class="group" id="slider-1">
+          <label class="title-2" for="size">COLUMNS</label>
+          <!-- <input
+            class="slider"
+            id="slider-columns"
+            type="range"
+            min="50"
+            max="200"
+            value="100"
+            id="size"
+          /> -->
         </div>
 
-        <div class="group">
+        <div class="group" id="slider-2">
+          <label class="title-2" for="speed">ROWS</label>
+          <!-- <input
+            class="slider"
+            id="slider-rows"
+            type="range"
+            min="50"
+            max="200"
+            value="100"
+            id="size"
+          /> -->
+        </div>
+
+        <div class="group" id="slider-3">
+          <label class="title-2" for="speed">MODULES</label>
+          <!-- <input
+            class="slider"
+            id="slider-modules"
+            type="range"
+            min="50"
+            max="200"
+            value="100"
+            id="size"
+          /> -->
+        </div>
+
+        <div class="group" id="slider-4">
           <label class="title-2" for="speed">SPEED</label>
-          <input class="slider" type="range" min="50" max="200" value="100" id="size" />
+          <!-- <input
+            class="slider"
+            id="slider-speed"
+            type="range"
+            min="50"
+            max="200"
+            value="100"
+            id="size"
+          /> -->
         </div>
 
         <div class="group">
           <div class="title-2">COLORS</div>
           <div class="group-row-gradient">
             <div class="btn-group-gradient">
-              <div class="title-3">Bright</div>
-              <div class="gradient-group">
-                <button class="gradient active-gradient"></button>
+              <!-- <div class="title-3">Bright</div> -->
+              <div class="gradient-group" id="colors-1">
+                <!-- <button class="gradient active-gradient"></button>
                 <button class="gradient"></button>
                 <button class="gradient"></button>
                 <button class="gradient"></button>
                 <button class="gradient"></button>
                 <button class="gradient"></button>
                 <button class="gradient"></button>
-                <button class="gradient"></button>
+                <button class="gradient"></button> -->
               </div>
             </div>
-            <div class="group-row-gradient">
+            <!-- <div class="group-row-gradient">
               <div class="btn-group-gradient">
                 <div class="title-3">Soft</div>
                 <div class="gradient-group">
@@ -60,7 +105,7 @@
                   <button class="gradient"></button>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -85,8 +130,8 @@
 
         <div class="group">
           <div class="title-2">FORMAT</div>
-          <div class="group-row">
-            <div class="btn-group">
+          <div class="buttons" id="format">
+            <!-- <div class="btn-group">
               <div class="title-3">Square</div>
               <div class="buttons">
                 <button>1:1</button>
@@ -105,7 +150,7 @@
                 <button>9:16</button>
                 <button>3:4</button>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -115,9 +160,10 @@
           </div>
         </div>
       </div>
-      <div class="artwork"></div>
+      <div id="visual"><main></main></div>
     </div>
 
     <script src="script.js"></script>
+    <script src="sketch-2.js"></script>
   </body>
 </html>

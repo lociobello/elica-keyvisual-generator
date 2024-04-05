@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+
+    <style>
+      #sketch-holder {
+        position: relative;
+      }
+
+      #text-container {
+        position: absolute;
+        top: 700px;
+        left: 170px;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 17px;
+      }
+
+      #text-container2 {
+        position: absolute;
+        top: 855px;
+        left: 10px;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 70px;
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main></main>
+
+    <div id="text-container">
+      <p>Columns: <span id="x-value"></span></p>
+      <p>Rows: <span id="y-value"></span></p>
+      <p>Modules: <span id="orizzontale"></span></p>
+      <p>Speed: <span id="radius-value"></span></p>
+      <p>Onda:</p>
+    </div>
+
+    <div id="text-container2">
+      <p>Colors:</p>
+      <p>Formats:</p>
+    </div>
+
+    <script src="sketch-aspiration.js"></script>
+
+    <script src="src/CCapture.js"></script>
+    <script src="src/webm-writer-0.2.0.js"></script>
+    <script src="src/download.js"></script>
+
+    <script>
+      var capturer = new CCapture({
+        format: "webm",
+        framerate: 30,
+        verbose: true,
+      });
+    </script>
+  </body>
+</html>

@@ -26,12 +26,13 @@ body {
   display: flex;
   flex-direction: column;
 }
-.artwork {
+#visual {
   flex: 1;
   background-color: #242424;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .group {
@@ -135,4 +136,29 @@ button.active {
 .download:active {
   background-color: white;
   color: black;
+}
+
+#sketch-holder {
+  position: relative;
+}
+
+#text-container {
+  position: absolute;
+  top: 700px;
+  left: 170px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+#text-container2 {
+  position: absolute;
+  top: 800px;
+  left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 70px;
+}
+canvas {
+  display: block;
 }
