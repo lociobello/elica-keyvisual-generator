@@ -126,4 +126,8 @@ button.active {
   width: 47%;
   height: 20px;
   background-image: linear-gradient(to right, red, yellow);
+  border: none;
+}
+.active-gradient {
+  border: 2px solid white;
 }
