@@ -113,11 +113,6 @@ function draw() {
   let vel = radiusSlider.value();
   orizontal = orizzontaliSlider.value();
 
-  // let columns = document.getElementById("slider-columns").value;
-  // let righe = document.getElementById("slider-rows").value;
-  // let vel = document.getElementById("slider-modules").value;
-  // let orizontal = document.getElementById("slider-speed").value;
-
   number = columns;
   rows = righe;
   modulow = canvaw / number;
@@ -130,13 +125,6 @@ function draw() {
   ///////////////////
 
   composizione();
-
-  ///////////////////
-
-  // document.getElementById("slider-1").textContent = columns;
-  // document.getElementById("slider-2").textContent = righe - 1;
-  // document.getElementById("slider-3").textContent = vel;
-  // document.getElementById("slider-4").textContent = orizontal * 2 - 1;
 }
 
 ///////////////////////
@@ -147,18 +135,22 @@ function interaction() {
   xSlider = createSlider(3, 40, 1, 1);
   xSlider.parent("slider-1");
   xSlider.addClass("slider");
+  createSliderValueDisplay(xSlider);
 
   ySlider = createSlider(2, 20, 1, 2);
   ySlider.parent("slider-2");
   ySlider.addClass("slider");
+  createSliderValueDisplay(ySlider);
 
   orizzontaliSlider = createSlider(1, 20, 1);
   orizzontaliSlider.parent("slider-3");
   orizzontaliSlider.addClass("slider");
+  createSliderValueDisplay(orizzontaliSlider);
 
   radiusSlider = createSlider(0, 10, 1);
   radiusSlider.parent("slider-4");
   radiusSlider.addClass("slider");
+  createSliderValueDisplay(radiusSlider);
 
   // Creazione dei pulsanti dei colori
   let colors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -226,6 +218,18 @@ function interaction() {
     }
     colorButtons.push(button2);
   }
+}
+
+function createSliderValueDisplay(slider) {
+  let valueDisplay = createDiv();
+  valueDisplay.parent(slider.parent());
+  valueDisplay.addClass("slider-value");
+  updateSliderValueDisplay(valueDisplay, slider);
+  slider.input(() => updateSliderValueDisplay(valueDisplay, slider));
+}
+
+function updateSliderValueDisplay(valueDisplay, slider) {
+  valueDisplay.html(slider.value());
 }
 
 function formato1() {

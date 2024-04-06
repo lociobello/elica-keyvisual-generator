@@ -113,6 +113,11 @@ button.active {
   background: #ffffff;
   cursor: pointer;
 }
+.slider-value {
+  color: #acacac;
+  margin-top: 4px;
+}
+
 .download {
   /* width: 100%; */
   margin-top: 20px;
