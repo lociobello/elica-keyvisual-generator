@@ -135,22 +135,22 @@ function interaction() {
   xSlider = createSlider(3, 40, 1, 1);
   xSlider.parent("slider-1");
   xSlider.addClass("slider");
-  createSliderValueDisplay(xSlider);
+  createSliderValueDisplay(xSlider, 0);
 
   ySlider = createSlider(2, 20, 1, 2);
   ySlider.parent("slider-2");
   ySlider.addClass("slider");
-  createSliderValueDisplay(ySlider);
+  createSliderValueDisplay(ySlider, 1);
 
   orizzontaliSlider = createSlider(1, 20, 1);
   orizzontaliSlider.parent("slider-3");
   orizzontaliSlider.addClass("slider");
-  createSliderValueDisplay(orizzontaliSlider);
+  createSliderValueDisplay(orizzontaliSlider, 2);
 
   radiusSlider = createSlider(0, 10, 1);
   radiusSlider.parent("slider-4");
   radiusSlider.addClass("slider");
-  createSliderValueDisplay(radiusSlider);
+  createSliderValueDisplay(radiusSlider, 3);
 
   // Creazione dei pulsanti dei colori
   let colors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -220,9 +220,17 @@ function interaction() {
   }
 }
 
-function createSliderValueDisplay(slider) {
+// function createSliderValueDisplay(slider) {
+//   let valueDisplay = createDiv();
+//   valueDisplay.parent(slider.parent());
+//   valueDisplay.addClass("slider-value");
+//   updateSliderValueDisplay(valueDisplay, slider);
+//   slider.input(() => updateSliderValueDisplay(valueDisplay, slider));
+// }
+
+function createSliderValueDisplay(slider, index) {
   let valueDisplay = createDiv();
-  valueDisplay.parent(slider.parent());
+  valueDisplay.parent(document.getElementsByClassName("slider-title")[index]);
   valueDisplay.addClass("slider-value");
   updateSliderValueDisplay(valueDisplay, slider);
   slider.input(() => updateSliderValueDisplay(valueDisplay, slider));
