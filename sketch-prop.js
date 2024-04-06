@@ -1,20 +1,25 @@
-let myCanvas;
 // let xSlider, ySlider, radiusSlider, orizzontali;
-xSlider = document.getElementById("slider-columns");
-ySlider = document.getElementById("slider-rows");
-radiusSlider = document.getElementById("slider-modules");
-orizzontali = document.getElementById("slider-speed");
+// let xSlider = document.getElementById("slider-columns");
+// let ySlider = document.getElementById("slider-rows");
+// let radiusSlider = document.getElementById("slider-modules");
+// let orizzontali = document.getElementById("slider-speed");
+// let orizontal;
 
 let colorButtons = [];
 let formatiButtons = [];
 let selectedColor;
+let myCanvas;
+
+/////////////////
 
 offset = 0;
 
 r1 = 1;
 
-canvaw = 100;
-canvah = 100;
+canvaw = 700;
+canvah = 700;
+
+/////////////////
 
 function setup() {
   black = color(0, 0, 0);
@@ -28,19 +33,25 @@ function setup() {
   cyan = color(0, 206, 250);
   green = color(1, 224, 187);
 
+  //////
+
   myCanvas = createCanvas(canvaw, canvah);
-  myCanvas.position(windowWidth / 2, 0);
   myCanvas.parent("visual");
+  // myCanvas.position(windowWidth / 2, 0);
 
   angleMode(DEGREES);
 
   curva = 0;
   sposta = 0;
 
+  ///////////////////////
+
   interaction();
 
   col = 1;
   form = 1;
+
+  ///////////////////////
 }
 
 function draw() {
@@ -72,35 +83,35 @@ function draw() {
     palette9();
   }
 
-  if (form === 1) {
+  if (form === "1:1") {
     formato1();
     createCanvas(canvaw, canvah);
   }
-  if (form === 2) {
+  if (form === "16:9") {
     formato2();
     createCanvas(canvaw, canvah);
   }
-  if (form === 3) {
+  if (form === "4:3") {
     formato3();
     createCanvas(canvaw, canvah);
   }
-  if (form === 4) {
+  if (form === "9:16") {
     formato4();
     createCanvas(canvaw, canvah);
   }
-  if (form === 5) {
+  if (form === "3:4") {
     formato5();
     createCanvas(canvaw, canvah);
   }
 
+  /////////////////////////
+
   background(0, 0, 0);
 
-  let columns = document.getElementById("slider-columns").value;
-  let righe = ySlider.value;
-  let vel = radiusSlider.value;
-  let orizontal = document.getElementById("slider-speed").value;
-
-  console.log(righe);
+  let columns = xSlider.value();
+  let righe = ySlider.value();
+  let vel = radiusSlider.value();
+  orizontal = orizzontaliSlider.value();
 
   number = columns;
   rows = righe;
@@ -110,40 +121,123 @@ function draw() {
   curv = 4;
 
   velocità = vel / (number * rows * orizontal);
+
+  ///////////////////
+
+  composizione();
 }
+
+///////////////////////
 
 function interaction() {
   // Creazione degli slider
 
+  xSlider = createSlider(3, 40, 1, 1);
+  xSlider.parent("slider-1");
+  xSlider.addClass("slider");
+  createSliderValueDisplay(xSlider, 0);
+
+  ySlider = createSlider(2, 20, 1, 2);
+  ySlider.parent("slider-2");
+  ySlider.addClass("slider");
+  createSliderValueDisplay(ySlider, 1);
+
+  orizzontaliSlider = createSlider(1, 20, 1);
+  orizzontaliSlider.parent("slider-3");
+  orizzontaliSlider.addClass("slider");
+  createSliderValueDisplay(orizzontaliSlider, 2);
+
+  radiusSlider = createSlider(0, 10, 1);
+  radiusSlider.parent("slider-4");
+  radiusSlider.addClass("slider");
+  createSliderValueDisplay(radiusSlider, 3);
+
   // Creazione dei pulsanti dei colori
   let colors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  let buttonWidth = width / colors.length;
   for (let i = 0; i < colors.length; i++) {
     let button = createButton("");
-    button.position(i * buttonWidth, height + 160);
-    button.size(buttonWidth, 30);
-    button.style("background-color", colors[i]);
+    button.parent("colors-1");
+    button.addClass("button-gradient");
+    button.style("background", getGradientColor(colors[i]));
     button.mousePressed(() => {
+      colorButtons.forEach((btn) => btn.removeClass("active-gradient"));
+      button.addClass("active-gradient");
       col = colors[i];
     });
+    if (i === 0) {
+      button.addClass("active-gradient");
+    }
     colorButtons.push(button);
   }
 
-  // Creazione dei pulsanti dei formati
-  let formati = [1, 2, 3, 4, 5];
+  function getGradientColor(col) {
+    if (col === 1) {
+      palette1();
+    }
+    if (col === 2) {
+      palette2();
+    }
+    if (col === 3) {
+      palette3();
+    }
+    if (col === 4) {
+      palette4();
+    }
+    if (col === 5) {
+      palette5();
+    }
+    if (col === 6) {
+      palette6();
+    }
+    if (col === 7) {
+      palette7();
+    }
+    if (col === 8) {
+      palette8();
+    }
+    if (col === 9) {
+      palette9();
+    }
+    return "linear-gradient(to right, " + c1 + ", " + c2 + ", " + c3 + ")";
+  }
 
-  let buttonWidth2 = width / colors.length;
+  // Creazione dei pulsanti dei formati
+  let formati = ["1:1", "16:9", "4:3", "9:16", "3:4"];
+
   for (let i = 0; i < formati.length; i++) {
-    let button2 = createButton("");
-    button2.position(i * buttonWidth + i * 5, height + 250);
-    button2.size(buttonWidth, 20);
-    button2.style("background-color", color(20, 20, 20));
+    let button2 = createButton(formati[i]);
+    button2.parent("format");
     button2.mousePressed(() => {
+      colorButtons.forEach((btn) => btn.removeClass("active"));
+      button2.addClass("active");
       form = formati[i];
     });
+    if (i === 0) {
+      button2.addClass("active");
+    }
     colorButtons.push(button2);
   }
+}
+
+// function createSliderValueDisplay(slider) {
+//   let valueDisplay = createDiv();
+//   valueDisplay.parent(slider.parent());
+//   valueDisplay.addClass("slider-value");
+//   updateSliderValueDisplay(valueDisplay, slider);
+//   slider.input(() => updateSliderValueDisplay(valueDisplay, slider));
+// }
+
+function createSliderValueDisplay(slider, index) {
+  let valueDisplay = createDiv();
+  valueDisplay.parent(document.getElementsByClassName("slider-title")[index]);
+  valueDisplay.addClass("slider-value");
+  updateSliderValueDisplay(valueDisplay, slider);
+  slider.input(() => updateSliderValueDisplay(valueDisplay, slider));
+}
+
+function updateSliderValueDisplay(valueDisplay, slider) {
+  valueDisplay.html(slider.value());
 }
 
 function formato1() {
@@ -152,22 +246,22 @@ function formato1() {
   canvah = 700;
 }
 function formato2() {
-  ///16:9
+  //16:9
   canvaw = 700;
   canvah = 394;
 }
 function formato3() {
-  ///4:3
+  //4:3
   canvaw = 700;
   canvah = 525;
 }
 function formato4() {
-  ///9:16
+  //9:16
   canvaw = 394;
   canvah = 700;
 }
 function formato5() {
-  ///4:3
+  //4:3
   canvaw = 525;
   canvah = 700;
 }

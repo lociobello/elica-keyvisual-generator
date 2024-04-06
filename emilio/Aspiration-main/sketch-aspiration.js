@@ -58,23 +58,23 @@ function draw() {
     palette3();
   }
 
-  if (form === 1) {
+  if (form === "1:1") {
     formato1();
     createCanvas(canvaw, canvah);
   }
-  if (form === 2) {
+  if (form === "16:9") {
     formato2();
     createCanvas(canvaw, canvah);
   }
-  if (form === 3) {
+  if (form === "4:3") {
     formato3();
     createCanvas(canvaw, canvah);
   }
-  if (form === 4) {
+  if (form === "9:16") {
     formato4();
     createCanvas(canvaw, canvah);
   }
-  if (form === 5) {
+  if (form === "3:4") {
     formato5();
     createCanvas(canvaw, canvah);
   }
@@ -327,8 +327,6 @@ function modulo3() {
   pop();
   pop();
 
-  //////////
-
   push();
   scale(1, -0.5);
 
@@ -359,14 +357,6 @@ function modulo4() {
     scale(strechw, strech);
     modulo3();
     pop();
-
-    //  push()
-    //  strech=1
-    //  strechw=(1/(rows))
-    //  translate((canvaw/2)-((canvaw*strechw)/2),0)
-    //  scale(strechw,strech)
-    //  modulo3()
-    //  pop()
   }
 }
 
@@ -381,13 +371,5 @@ function composizione() {
     scale(strechw, strech);
     modulo4();
     pop();
-
-    //  push()
-    //  strech=(1/(orizontal))
-    //  strechw=1
-    //  translate(0,((canvah*strech)*z2))
-    //  scale(strechw,-strech)
-    //  modulo4()
-    //  pop()
   }
 }
