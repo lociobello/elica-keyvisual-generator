@@ -132,12 +132,12 @@ function draw() {
 function interaction() {
   // Creazione degli slider
 
-  xSlider = createSlider(3, 40, 1, 1);
+  xSlider = createSlider(3, 40, 10, 1);
   xSlider.parent("slider-1");
   xSlider.addClass("slider");
   createSliderValueDisplay(xSlider, 0);
 
-  ySlider = createSlider(2, 20, 1, 2);
+  ySlider = createSlider(2, 20, 4, 2);
   ySlider.parent("slider-2");
   ySlider.addClass("slider");
   createSliderValueDisplay(ySlider, 1);
@@ -147,7 +147,7 @@ function interaction() {
   orizzontaliSlider.addClass("slider");
   createSliderValueDisplay(orizzontaliSlider, 2);
 
-  radiusSlider = createSlider(0, 10, 1);
+  radiusSlider = createSlider(0, 10, 2);
   radiusSlider.parent("slider-4");
   radiusSlider.addClass("slider");
   createSliderValueDisplay(radiusSlider, 3);

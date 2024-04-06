@@ -129,7 +129,7 @@ function interaction() {
   xSlider.addClass("slider");
   createSliderValueDisplay(xSlider, 0);
 
-  ySlider = createSlider(1, 20, 1, 1);
+  ySlider = createSlider(1, 20, 6, 1);
   ySlider.parent("slider-2");
   ySlider.addClass("slider");
   createSliderValueDisplay(ySlider, 1);
@@ -139,12 +139,12 @@ function interaction() {
   orizzontaliSlider.addClass("slider");
   createSliderValueDisplay(orizzontaliSlider, 2);
 
-  radiusSlider = createSlider(0, 10, 1);
+  radiusSlider = createSlider(0, 10, 2);
   radiusSlider.parent("slider-4");
   radiusSlider.addClass("slider");
   createSliderValueDisplay(radiusSlider, 3);
 
-  ondaSlider = createSlider(1, 100, 1);
+  ondaSlider = createSlider(1, 100, 3);
   ondaSlider.parent("slider-5");
   ondaSlider.addClass("slider");
   createSliderValueDisplay(ondaSlider, 4);
