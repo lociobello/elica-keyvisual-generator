@@ -120,9 +120,19 @@ button.active {
 .gradient-group {
   display: flex;
   flex-wrap: wrap;
-  /* width: fit-content; */
   gap: 8px;
+  width: 100%;
+  justify-content: space-between;
 }
+.button-gradient {
+  height: 29px;
+  width: calc(33.3333% - 6px);
+  border: none;
+}
+.selected {
+  border: 2px solid white;
+}
+
 .gradient {
   width: 47%;
   height: 20px;

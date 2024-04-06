@@ -163,17 +163,56 @@ function interaction() {
   // Creazione dei pulsanti dei colori
   let colors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  let buttonWidth = width / colors.length;
+  // let parentWidth = document.getElementById("colors-1").clientWidth;
+  // let buttonWidth = parentWidth / 3.5;
+
   for (let i = 0; i < colors.length; i++) {
     let button = createButton("");
     button.parent("colors-1");
-    // button.position(i * buttonWidth, height + 160);
-    button.size(buttonWidth, 29);
-    // button.style("background-color", colors[i]);
+    // button.size(buttonWidth, 29);
+    button.addClass("button-gradient");
+    button.style("background", getGradientColor(colors[i]));
     button.mousePressed(() => {
+      colorButtons.forEach((btn) => btn.removeClass("selected"));
+      button.addClass("selected");
       col = colors[i];
     });
+    if (i === 0) {
+      button.addClass("selected");
+    }
     colorButtons.push(button);
+  }
+
+  function getGradientColor(col) {
+    if (col === 1) {
+      palette1();
+    }
+    if (col === 2) {
+      palette2();
+    }
+    if (col === 3) {
+      palette3();
+    }
+    if (col === 4) {
+      palette4();
+    }
+    if (col === 5) {
+      palette5();
+    }
+    if (col === 6) {
+      palette6();
+    }
+    if (col === 7) {
+      palette7();
+    }
+    if (col === 8) {
+      palette8();
+    }
+    if (col === 9) {
+      palette9();
+    }
+    // Return the color string for the gradient
+    return "linear-gradient(to right, " + c1 + ", " + c2 + ", " + c3 + ")";
   }
 
   // Creazione dei pulsanti dei formati
