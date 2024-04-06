@@ -163,22 +163,18 @@ function interaction() {
   // Creazione dei pulsanti dei colori
   let colors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  // let parentWidth = document.getElementById("colors-1").clientWidth;
-  // let buttonWidth = parentWidth / 3.5;
-
   for (let i = 0; i < colors.length; i++) {
     let button = createButton("");
     button.parent("colors-1");
-    // button.size(buttonWidth, 29);
     button.addClass("button-gradient");
     button.style("background", getGradientColor(colors[i]));
     button.mousePressed(() => {
-      colorButtons.forEach((btn) => btn.removeClass("selected"));
-      button.addClass("selected");
+      colorButtons.forEach((btn) => btn.removeClass("active-gradient"));
+      button.addClass("active-gradient");
       col = colors[i];
     });
     if (i === 0) {
-      button.addClass("selected");
+      button.addClass("active-gradient");
     }
     colorButtons.push(button);
   }
@@ -211,7 +207,6 @@ function interaction() {
     if (col === 9) {
       palette9();
     }
-    // Return the color string for the gradient
     return "linear-gradient(to right, " + c1 + ", " + c2 + ", " + c3 + ")";
   }
 
@@ -222,8 +217,13 @@ function interaction() {
     let button2 = createButton(formati[i]);
     button2.parent("format");
     button2.mousePressed(() => {
+      colorButtons.forEach((btn) => btn.removeClass("active"));
+      button2.addClass("active");
       form = formati[i];
     });
+    if (i === 0) {
+      button2.addClass("active");
+    }
     colorButtons.push(button2);
   }
 }

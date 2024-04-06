@@ -129,9 +129,6 @@ button.active {
   width: calc(33.3333% - 6px);
   border: none;
 }
-.selected {
-  border: 2px solid white;
-}
 
 .gradient {
   width: 47%;
