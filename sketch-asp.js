@@ -414,3 +414,21 @@ function composizione() {
     pop();
   }
 }
+
+function download() {
+  var activeButton = document.querySelector(".ob button.active");
+
+  if (activeButton.id === "output-png") {
+    downloadPNG();
+  } else if (activeButton.id === "output-mp4") {
+    downloadMP4();
+  } else if (activeButton.id === "output-mov") {
+    downloadMOV();
+  } else {
+    console.log("No active button found.");
+  }
+}
+
+function downloadPNG() {
+  saveCanvas(myCanvas, "elicaKeyVisual", "png");
+}

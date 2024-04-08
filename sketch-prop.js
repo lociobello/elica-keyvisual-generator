@@ -37,7 +37,6 @@ function setup() {
 
   myCanvas = createCanvas(canvaw, canvah);
   myCanvas.parent("visual");
-  // myCanvas.position(windowWidth / 2, 0);
 
   angleMode(DEGREES);
 
