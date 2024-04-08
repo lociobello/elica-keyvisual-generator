@@ -373,9 +373,21 @@ function modulo3() {
 
   translate(0, -canvah - canvah);
 
+  // c4 = c1;
+
+  // c1 = c2;
+  // c2 = c3;
+  // c3 = c4;
+
+  if (c3 === c1) {
+    c3 = c2;
+  } else {
+    c3 = c3;
+  }
+
+  c4 = c1;
   c1 = c2;
-  c2 = c3;
-  c3 = c1;
+  c2 = c4;
 
   modulo2a();
 
