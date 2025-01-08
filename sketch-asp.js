@@ -240,24 +240,27 @@ function formato5() {
 function palette1() {
   c1 = black;
   c2 = blue;
-  c3 = black;
+  c3 = white;
+  c4 = black;
 }
 function palette2() {
   c1 = blue;
   c2 = cyan;
   c3 = white;
+  c4 = blue;
 }
 function palette3() {
-  c1 = blue;
-  c2 = green;
+  c1 = green;
+  c2 = blue;
   c3 = black;
+  c4 = green;
 }
 
 function gradiente(partenza, altezza) {
   let gradient = drawingContext.createLinearGradient(partenza, 0, altezza, 0);
 
   gradient.addColorStop(0.1, c1);
-  gradient.addColorStop(0.8, c2);
+  gradient.addColorStop(0.5, c2);
   gradient.addColorStop(1, c3);
 
   drawingContext.fillStyle = gradient;
@@ -283,7 +286,7 @@ function modulo0(x, e, f, r1) {
   gradiente(0, modulow / 2 - magic1);
   rect(0, x, modulow / 2 - magic1, moduloh);
 
-  gradiente(+modulow, modulow / 2 - magic1);
+  gradiente(modulow, modulow / 2 - magic1);
   rect(0 + modulow, x, -magic1 - modulow / 2, moduloh);
 
   fill(200);
@@ -295,7 +298,7 @@ function modulo1(x, e, f, r1) {
   gradiente(0, modulow / 2 - magic1);
   rect(0, x, modulow / 2 - magic1, moduloh);
 
-  gradiente(+modulow, modulow / 2 - magic1);
+  gradiente(modulow / 2 - magic1, modulow);
   rect(0 + modulow, x, -magic1 - modulow / 2, moduloh);
 
   fill(200);
@@ -379,15 +382,17 @@ function modulo3() {
   // c2 = c3;
   // c3 = c4;
 
-  if (c3 === c1) {
-    c3 = c2;
-  } else {
-    c3 = c3;
-  }
+  // if (c3 === c1) {
+  //   c3 = c2;
+  // } else {
+  //   c3 = c1;
+  // }
 
-  c4 = c1;
-  c1 = c2;
-  c2 = c4;
+  c1 = c3;
+  c2 = c2;
+
+  c3 = c4;
+  c4 = c2;
 
   modulo2a();
 
