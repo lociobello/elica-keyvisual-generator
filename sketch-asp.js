@@ -16,8 +16,8 @@ offset = 0;
 
 r1 = 1;
 
-canvaw = 700;
-canvah = 700;
+canvaw = 800;
+canvah = 800;
 
 angle1 = 0;
 
@@ -213,28 +213,28 @@ function updateSliderValueDisplay(valueDisplay, slider) {
 
 function formato1() {
   //1:1
-  canvaw = 700;
-  canvah = 700;
+  canvaw = 800;
+  canvah = 800;
 }
 function formato2() {
   //16:9
-  canvaw = 700;
-  canvah = 394;
+  canvaw = 1100;
+  canvah = 574;
 }
 function formato3() {
   //4:3
-  canvaw = 700;
-  canvah = 525;
+  canvaw = 800;
+  canvah = 600;
 }
 function formato4() {
   //9:16
-  canvaw = 394;
-  canvah = 700;
+  canvaw = 450;
+  canvah = 800;
 }
 function formato5() {
   //4:3
-  canvaw = 525;
-  canvah = 700;
+  canvaw = 600;
+  canvah = 800;
 }
 
 function palette1() {
@@ -390,7 +390,6 @@ function modulo3() {
 
   c1 = c3;
   c2 = c2;
-
   c3 = c4;
   c4 = c2;
 
